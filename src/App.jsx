@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import GeneratorForm from './components/GeneratorForm';
+import ResultCard from './components/ResultCard';
+import { motion } from 'framer-motion';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [results, setResults] = useState([]);
+  const [toast, setToast] = useState('');
+
+  function handleCopy(email) {
+    setToast(`Copied ${email}`);
+    setTimeout(()=> setToast(''), 2000);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen p-8 bg-base-200">
+      <div className="max-w-4xl mx-auto">
+        <GeneratorForm onResults={setResults} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          {results.map(r => (
+            <motion.div key={r} initial={{opacity:0,y:6}} animate={{opacity:1,y:0}}>
+              <ResultCard email={r} onCopy={handleCopy} />
+            </motion.div>
+          ))}
+        </div>
 
-export default App
+        {toast && <div className="toast toast-top toast-center"><div className="alert alert-success">{toast}</div></div>}
+      </div>
+    </div>
+  );
+}
