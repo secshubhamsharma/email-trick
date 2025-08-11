@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Card, Button } from '@heroui/react';
-import { motion } from 'framer-motion';
-import { Copy, Check } from 'lucide-react';
-import toast from 'react-hot-toast';
+import { Card, Button } from '@heroui/react'; 
+import { motion } from 'framer-motion'; 
+import { Copy, Check } from 'lucide-react'; 
+import toast from 'react-hot-toast'; 
 
 function ResultCard({ email, onCopy }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false); 
 
   const copyToClipboard = () => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -46,17 +46,17 @@ function ResultCard({ email, onCopy }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 10 }} 
+      animate={{ opacity: 1, y: 0 }} 
       exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3 }} 
     >
-      <Card className="p-4 flex justify-between items-center bg-zinc-100 dark:bg-zinc-700 rounded-lg shadow-sm">
-        <div className="text-sm break-all font-mono text-zinc-800 dark:text-zinc-200 pr-2">
+      <Card className="p-4 flex justify-between items-center bg-light_card dark:bg-dark_card rounded-lg shadow-sm">
+        <div className="text-sm break-all font-mono text-light_text dark:text-dark_text pr-2">
           {email}
         </div>
         <Button
-          isIconOnly 
+          isIconOnly
           variant="ghost"
           color={copied ? "success" : "default"}
           onClick={copyToClipboard}

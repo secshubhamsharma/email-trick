@@ -6,12 +6,12 @@ import { generateDotVariants, generatePlusVariants } from '../utils/generators';
 
 function GeneratorForm({ onResults }) {
   const [email, setEmail] = useState('');
-  const [mode, setMode] = useState('dot');
-  const [limit, setLimit] = useState(200);
+  const [mode, setMode] = useState('dot'); 
+  const [limit, setLimit] = useState(200); 
   const [rangeStart, setRangeStart] = useState(1);
-  const [rangeEnd, setRangeEnd] = useState(50);
-  const [customTags, setCustomTags] = useState('');
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [rangeEnd, setRangeEnd] = useState(50); 
+  const [customTags, setCustomTags] = useState(''); 
+  const [isGenerating, setIsGenerating] = useState(false); 
   const [emailError, setEmailError] = useState('');
 
   const validateEmail = (inputEmail) => {
@@ -34,14 +34,14 @@ function GeneratorForm({ onResults }) {
 
     const error = validateEmail(email);
     if (error) {
-      setEmailError(error);
-      toast.error(error);
-      return;
+      setEmailError(error); 
+      toast.error(error); 
+      return; 
     } else {
-      setEmailError('');
+      setEmailError(''); 
     }
 
-    setIsGenerating(true);
+    setIsGenerating(true); 
     const [local, domain] = email.split('@');
     let results = [];
 
@@ -49,21 +49,21 @@ function GeneratorForm({ onResults }) {
       if (mode === 'dot') {
         results = generateDotVariants(local.replace(/\./g, ''), domain, limit);
       } else {
-        results = generatePlusVariants(local, domain, { start: Number(rangeStart), end: Number(rangeEnd), customTags });
+        results = generatePlusPlusVariants(local, domain, { start: Number(rangeStart), end: Number(rangeEnd), customTags });
       }
-      onResults(results);
-      toast.success(`Generated ${results.length} email variants!`);
+      onResults(results); 
+      toast.success(`Generated ${results.length} email variants!`); 
     } catch (err) {
-      toast.error("An error occurred during generation.");
-      console.error("Generation error:", err);
+      toast.error("An error occurred during generation."); 
+      console.error("Generation error:", err); 
     } finally {
-      setIsGenerating(false);
+      setIsGenerating(false); 
     }
   }
 
   return (
-    <Card className="p-8 shadow-lg w-full max-w-2xl mx-auto dark:bg-zinc-800 bg-white rounded-xl">
-      <h2 className="text-2xl font-bold mb-6 text-center text-zinc-900 dark:text-white">Email Trick Generator</h2>
+    <Card className="p-8 shadow-lg w-full max-w-2xl mx-auto bg-light_card dark:bg-dark_card rounded-xl text-light_text dark:text-dark_text">
+      <h2 className="text-2xl font-bold mb-6 text-center">Email Trick Generator</h2>
 
       <Input
         label="Your Email"
@@ -74,11 +74,12 @@ function GeneratorForm({ onResults }) {
           setEmailError(validateEmail(e.target.value));
         }}
         placeholder="johnsmith@gmail.com"
-        isInvalid={!!emailError}
-        errorMessage={emailError}
+        isInvalid={!!emailError} 
+        errorMessage={emailError} 
         className="mb-6"
         size="lg"
-        variant="bordered"
+        variant="faded"
+        color="primary"
       />
 
       <RadioGroup
@@ -87,9 +88,10 @@ function GeneratorForm({ onResults }) {
         orientation="horizontal"
         className="mb-6 flex justify-center gap-6"
         label="Choose a trick:"
+        color="primary"
       >
-        <Radio value="dot" color="primary">Gmail Dot Trick</Radio>
-        <Radio value="plus" color="primary">Business + Tag</Radio>
+        <Radio value="dot">Gmail Dot Trick</Radio>
+        <Radio value="plus">Business + Tag</Radio>
       </RadioGroup>
 
       {mode === 'dot' ? (
@@ -100,9 +102,10 @@ function GeneratorForm({ onResults }) {
           onChange={e => setLimit(Number(e.target.value))}
           className="mb-6"
           min={1}
-          max={1000}
+          max={1000} 
           size="md"
-          variant="bordered"
+          variant="faded"
+          color="primary"
         />
       ) : (
         <>
@@ -114,7 +117,8 @@ function GeneratorForm({ onResults }) {
             className="mb-4"
             min={0}
             size="md"
-            variant="bordered"
+            variant="faded"
+            color="primary"
           />
           <Input
             label="Plus Tag Range End"
@@ -124,7 +128,8 @@ function GeneratorForm({ onResults }) {
             className="mb-4"
             min={1}
             size="md"
-            variant="bordered"
+            variant="faded"
+            color="primary"
           />
           <Input
             label="Custom Tags (comma-separated, e.g., work, personal)"
@@ -134,24 +139,25 @@ function GeneratorForm({ onResults }) {
             className="mb-6"
             placeholder="e.g., newsletter, marketing, test"
             size="md"
-            variant="bordered"
+            variant="faded"
+            color="primary"
           />
         </>
       )}
 
       <div className="flex gap-4 justify-center">
         <Button
-          color="primary"
+          color="primary" 
           onClick={handleGenerate}
-          isLoading={isGenerating}
-          disabled={isGenerating || !!emailError}
-          className="w-full sm:w-auto"
+          isLoading={isGenerating} 
+          disabled={isGenerating || !!emailError} 
+          className="w-full sm:w-auto font-semibold"
         >
           {isGenerating ? 'Generating...' : 'Generate'}
         </Button>
         <Button
           variant="bordered"
-          color="secondary"
+          color="default"
           onClick={() => {
             setEmail('');
             setMode('dot');
@@ -163,7 +169,7 @@ function GeneratorForm({ onResults }) {
             onResults([]);
             toast.info("Form reset!");
           }}
-          className="w-full sm:w-auto"
+          className="w-full sm:w-auto font-semibold"
           disabled={isGenerating}
         >
           Reset
