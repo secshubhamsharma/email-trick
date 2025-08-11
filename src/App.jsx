@@ -169,7 +169,7 @@ function App() {
 
     {/* Medium */}
     <a
-      href="https://medium.com/secshubhamsharma"
+      href="https://medium.com/@secshubhamsharma"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Medium"
