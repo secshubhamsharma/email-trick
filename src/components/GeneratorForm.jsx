@@ -99,30 +99,29 @@ function GeneratorForm({ onResults }) {
             Select Email Trick
           </p>
           <RadioGroup
-  value={mode}
-  onValueChange={setMode}
-  orientation="horizontal"
-  className="flex flex-wrap justify-center gap-6"
-  color="primary"
->
-  <div className="px-4 py-2 border rounded-xl shadow-sm hover:shadow-md transition-all min-w-[150px] flex-1 flex items-center justify-center">
-    <Radio
-      value="dot"
-      className="w-full flex items-center justify-center"
-    >
-      Gmail Dot Trick
-    </Radio>
-  </div>
-  <div className="px-4 py-2 border rounded-xl shadow-sm hover:shadow-md transition-all min-w-[150px] flex-1 flex items-center justify-center">
-    <Radio
-      value="plus"
-      className="w-full flex items-center justify-center"
-    >
-      Business + Tag
-    </Radio>
-  </div>
-</RadioGroup>
-
+            value={mode}
+            onValueChange={setMode}
+            orientation="horizontal"
+            className="flex flex-wrap justify-center gap-6"
+            color="primary"
+          >
+            <div className="px-4 py-2 border rounded-xl shadow-sm hover:shadow-md transition-all min-w-[150px] flex-1 flex items-center justify-center">
+              <Radio
+                value="dot"
+                className="w-full flex items-center justify-center"
+              >
+                Gmail Dot Trick
+              </Radio>
+            </div>
+            <div className="px-4 py-2 border rounded-xl shadow-sm hover:shadow-md transition-all min-w-[150px] flex-1 flex items-center justify-center">
+              <Radio
+                value="plus"
+                className="w-full flex items-center justify-center"
+              >
+                Business + Tag
+              </Radio>
+            </div>
+          </RadioGroup>
         </div>
 
         {/* Limit Input */}
@@ -132,7 +131,6 @@ function GeneratorForm({ onResults }) {
           value={limit}
           onChange={(e) => setLimit(Number(e.target.value))}
           min={1}
-          max={mode === "dot" ? 1000 : 500}
           size="lg"
           variant="bordered"
           color="primary"
