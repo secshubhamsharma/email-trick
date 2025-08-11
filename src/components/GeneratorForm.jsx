@@ -46,7 +46,7 @@ function GeneratorForm({ onResults }) {
       if (mode === 'dot') {
         results = generateDotVariants(local.replace(/\./g, ''), domain, limit);
       } else {
-        results = generatePlusVariants(local, domain, { start: 1, end: limit });
+        results = generatePlusVariants(local, domain, { limit });
       }
       onResults(results);
       toast.success(`Generated ${results.length} email variants!`);

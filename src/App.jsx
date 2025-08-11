@@ -11,7 +11,7 @@ function App() {
   const [results, setResults] = useState([]);
   const [theme, setTheme] = useState('dark');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 15; 
+  const itemsPerPage = 15;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -107,7 +107,7 @@ function App() {
                 color="primary"
                 onClick={handleCopyAll}
                 startContent={<Clipboard size={16} />}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto font-semibold"
               >
                 Copy All ({results.length})
               </Button>
@@ -120,6 +120,7 @@ function App() {
                     onClick={() => handlePageChange(currentPage - 1)}
                     isDisabled={currentPage === 1}
                     aria-label="Previous page"
+                    color="primary"
                   >
                     <ChevronLeft size={20} />
                   </Button>
@@ -130,6 +131,7 @@ function App() {
                     onClick={() => handlePageChange(currentPage + 1)}
                     isDisabled={currentPage === totalPages}
                     aria-label="Next page"
+                    color="primary"
                   >
                     <ChevronRight size={20} />
                   </Button>
@@ -137,7 +139,7 @@ function App() {
               )}
             </div>
             <div className="flex flex-col gap-3">
-              <AnimatePresence> 
+              <AnimatePresence>
                 {currentResults.map(r => (
                   <ResultCard key={r} email={r} onCopy={handleCopyIndividual} />
                 ))}

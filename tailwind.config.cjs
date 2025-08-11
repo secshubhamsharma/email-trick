@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// Correctly import 'heroui' from @heroui/react
 const { heroui } = require("@heroui/react");
 
 module.exports = {
