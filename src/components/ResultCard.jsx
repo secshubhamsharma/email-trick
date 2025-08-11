@@ -51,21 +51,22 @@ function ResultCard({ email, onCopy }) {
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="p-4 flex justify-between items-center bg-light_card dark:bg-dark_card rounded-lg shadow-sm border border-primary-500/20"> {/* Added subtle green border */}
-        <div className="text-sm break-all font-mono text-light_text dark:text-dark_text pr-2 flex-grow">
-          {email}
-        </div>
-        <Button
-          isIconOnly
-          variant="ghost" 
-          color={copied ? "success" : "default"}
-          onClick={copyToClipboard}
-          className="min-w-[36px] min-h-[36px] flex-shrink-0"
-          aria-label={copied ? "Copied" : "Copy email"}
-        >
-          {copied ? <Check size={18} /> : <Copy size={18} />}
-        </Button>
-      </Card>
+  <Card className="px-4 py-2 flex flex-row items-center justify-between flex-nowrap bg-light_card dark:bg-dark_card rounded-lg shadow-sm border border-primary-500/20">
+  <div className="text-sm break-all font-mono text-light_text dark:text-dark_text flex-grow">
+    {email}
+  </div>
+  <Button
+    isIconOnly
+    variant="ghost"
+    color={copied ? "success" : "default"}
+    onClick={copyToClipboard}
+    className="min-w-[32px] min-h-[32px] flex-shrink-0"
+    aria-label={copied ? "Copied" : "Copy email"}
+  >
+    {copied ? <Check size={16} /> : <Copy size={16} />}
+  </Button>
+</Card>
+
     </motion.div>
   );
 }
