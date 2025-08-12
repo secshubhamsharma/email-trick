@@ -17,6 +17,8 @@ Business Plus Tagging: Many email providers, like Gmail and Outlook, let you add
 Why this is handy: These tricks are incredibly useful for organizing your inbox. You can create rules in your email settings to automatically sort incoming mail. For instance, you could set up a rule that says, Any email sent to yourname+shopping@example.com should be moved to my Shopping folder.
 
 ## Demo
+<img width="1856" height="1168" alt="demo" src="https://github.com/user-attachments/assets/93dfd6ca-e046-42f9-865c-9e8f43b734aa" />
+
 
 ## Key Features
 I focused on making this app intuitive and genuinely useful, with a clean interface:
