@@ -3,6 +3,26 @@
 
 - - -
 
+## Table of Contents
+
+- [The Story Behind This Project](#the-story-behind-this-project)
+- [What It Does](#what-it-does)
+- [Demo](#demo)
+- [Key Features](#key-features)
+- [Technologies I Used](#technologies-i-used)
+- [Project Structure](#project-structure)
+- [Getting Started (for Developers)](#getting-started-for-developers)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running Locally](#running-locally)
+- [Important Note: Ethical Use](#important-note-ethical-use)
+- [Contributing](#contributing)
+- [Author](#author)
+- [Support](#support)
+- [License](#license)
+
+---
+
 ## The Story Behind This Project
 
 I've always been interested in finding ways to test the limits of online platforms. I noticed that many services, when you sign up, don't have good systems to prevent people from creating multiple accounts. I wanted to see if I could use a simple trick to create countless signups without ever having to create a new email account.
