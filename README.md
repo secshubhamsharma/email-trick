@@ -39,6 +39,27 @@ Building this project was a fantastic learning experience, and it gave me the ch
 - **SheetJS (xlsx):** A powerful library that enabled the native Excel (.xlsx) export functionality.
 - **`gh-pages`:** To easily deploy the app to GitHub Pages.
 
+ ## Project Structure 
+```text
+email-tricks/
+├─ public/                 # Static assets like index.html and favicon
+├─ src/                    # All the main source code for the React app
+│  ├─ App.jsx             # The core app logic, state management, and main layout
+│  ├─ main.jsx            # Entry point of the React application
+│  ├─ styles/
+│  │   └─ index.css       # Main CSS, bringing in Tailwind styles
+│  ├─ components/         # Reusable UI components
+│  │   ├─ GeneratorForm.jsx # The input form for email and trick selection
+│  │   ├─ ResultCard.jsx    # Component for displaying individual generated emails
+│  │   └─ ResultsDisplay.jsx # New component for displaying all generated results
+│  └─ utils/
+│      └─ generators.js   # The brains behind email variant generation
+├─ .gitignore              # Files Git should ignore
+├─ package.json            # Project details, scripts, and dependencies
+├─ tailwind.config.cjs     # Tailwind CSS setup and custom theme
+└─ vite.config.js          # Vite build tool configuration
+```
+
 
 ## Important Note: Ethical Use
 The Email Trick Generator is a tool designed purely for educational, personal organization, and ethical testing purposes. It demonstrates how email addressing variations work on certain platforms.
