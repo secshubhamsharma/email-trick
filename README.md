@@ -1,5 +1,5 @@
-<h1 align="center">Email Trick Generator ✨
-</h1><i>The Email Trick Generator is a simple web tool. You give it your main email address, and it creates unique variations of it. The best part is, all the mail sent to these new addresses still lands right in your primary inbox. This is super useful for organizing your emails, tracking where you've signed up for things, and managing your digital footprint without having to make a bunch of new accounts.</i>
+<h1 align="center">Email Trick Generator ✨ </h1>
+<p align="center"> <i>The Email Trick Generator is a simple web tool. You give it your main email address, and it creates unique variations of it. The best part is, all the mail sent to these new addresses still lands right in your primary inbox. This is super useful for organizing your emails, tracking where you've signed up for things, and managing your digital footprint without having to make a bunch of new accounts.</i> </p>
 
 - - -
 
@@ -59,7 +59,38 @@ email-tricks/
 ├─ tailwind.config.cjs     # Tailwind CSS setup and custom theme
 └─ vite.config.js          # Vite build tool configuration
 ```
+## Getting Started (for Developers) 
 
+Want to explore the code or run this app locally? Here's how:
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/en) (which includes npm) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+
+```other
+git clone https://github.com/secshubhamsharma/email-trick.git
+cd email-trick
+```
+
+1. **Install dependencies:**
+
+```other
+npm install
+```
+
+### Running Locally
+
+To fire up the development server:
+
+```other
+npm run dev
+```
+
+This will open the application in your browser, usually at `http://localhost:5173`.
 
 ## Important Note: Ethical Use
 The Email Trick Generator is a tool designed purely for educational, personal organization, and ethical testing purposes. It demonstrates how email addressing variations work on certain platforms.
